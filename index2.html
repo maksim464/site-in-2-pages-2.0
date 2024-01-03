@@ -1,0 +1,64 @@
+<html>
+<head><style>
+        #numberInput {
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style> <title> Ціни </title> <link rel="stylesheet" href="style.css"> </head>
+<body>
+<header>
+<h1>Ціни на товари</h1>
+</header>
+<main>
+
+<p class="p1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOM4cBonX1mK1B_5j0pAlu-hin40sTIq7IZA&usqp=CAU"/> <br/> Самокат</p>
+<p class="p1">Ціна:3999.99</p><br/>
+<p class="p1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Gk0EPzPEgg8uenprB2UCdxeyTIZYzekv1Q&usqp=CAU"/><br/> Ноутбук</p>
+<p class="p1">Ціна:4999.99</p><br/>
+<p class="p1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPnJFrGl_zqxvFuU1wuibui9m-gziSA8_Iw&usqp=CAU"/><br/>Смартфон</p>
+<p class="p1">Ціна:5999.99</p><br/>
+
+<p class="p1"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG5AkcxEtX0iRHFVKMhY9uGFk5qjfSPQOW5w&usqp=CAU"/><br/>Планшет</p>
+<p class="p1">Ціна:7999.99</p>
+<input type="number" id="numberInput" placeholder="Введіть число" />
+<button class="pay">Pay</button>
+<p class="payResult"></p>
+<script>
+    let numberInput = document.getElementById("numberInput");
+    let payResult = document.querySelector(".payResult");
+    const payBtn = document.querySelector(".pay");
+    numberInput.value = localStorage.getItem("savedNumber") || "";
+
+    numberInput.oninput = () => {
+        localStorage.setItem("savedNumber", numberInput.value);
+    }
+
+    payBtn.addEventListener("click", ()=>{
+        if(numberInput.value>0){
+            payResult.innerHTML = `Сплачено: ${numberInput.value} грн.`
+        }
+        else{
+            if(numberInput.value==0){
+                payResult.innerHTML = `Сума 0 грн`
+            }
+            if(numberInput.value<0){
+                  payResult.innerHTML = `Неможливо сплатити мінус значення`
+            }
+           
+        }
+        
+            
+
+    })
+</script>
+
+
+</main>
+<footer>
+<h2>Є питання?</h2>
+<p>телефонуйте за номером:+3809657244804</p>
+</footer>
+</body>
+</html>
