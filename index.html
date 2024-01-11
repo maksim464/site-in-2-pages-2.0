@@ -6,35 +6,94 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
-    </style> <title> Ціни </title> <link rel="stylesheet" href="style2.css"> </head>
+    </style> <title> Ціни </title> <link rel="stylesheet" href="style.css"> </head>
 <body>
-<header>
+<header><nav>
+           <a id="nav1" class="nava1" href="https://maksim464.github.io/site-in-2-pages/">Головна</a> <a class="nava2" href="">Детальніше</a> </nav></header>
 <h1>Ціни на товари</h1>
-</header>
+
 <main>
+<div class="card">
+    <div class="p1">
+        <p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOM4cBonX1mK1B_5j0pAlu-hin40sTIq7IZA&usqp=CAU"/> 
+        <br/> Самокат</p>
+    <p >Ціна:<span>3999.99</span></p>
+    </div>
+    <div class="p2">
+        <p class="p2__title">Електросамокат</p> <br/>
+        <p class="p2__body">це мобільний транспортний засіб, обладнаний електричним двигуном, призначений для пересування по місту чи іншими вуличними просторами. 
+ </p>
+    </div>
+</div>
 
-<p class="p1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOM4cBonX1mK1B_5j0pAlu-hin40sTIq7IZA&usqp=CAU"/> <br/> Самокат</p>
-<p class="p1">Ціна:3999.99</p><br/>
-<p class="p1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Gk0EPzPEgg8uenprB2UCdxeyTIZYzekv1Q&usqp=CAU"/><br/> Ноутбук</p>
-<p class="p1">Ціна:4999.99</p><br/>
-<p class="p1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPnJFrGl_zqxvFuU1wuibui9m-gziSA8_Iw&usqp=CAU"/><br/>Смартфон</p>
-<p class="p1">Ціна:5999.99</p><br/>
+<div class="card">
+    <div class="p1">
+        <p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Gk0EPzPEgg8uenprB2UCdxeyTIZYzekv1Q&usqp=CAU"/> 
+        <br/>Ноутбук </p>
+    <p >Ціна: <span>4999.99</span></p>
+    </div>
+    <div class="p2">
+        <p class="p2__title">Ноутбук</p> <br/>
+        <p class="p2__body">портативний комп'ютер, компактний та легкий, призначений для мобільного використання. Він має вбудований екран, клавіатуру та мишу чи сенсорний панель. 
 
-<p class="p1"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG5AkcxEtX0iRHFVKMhY9uGFk5qjfSPQOW5w&usqp=CAU"/><br/>Планшет</p>
-<p class="p1">Ціна:7999.99</p>
+
+
+
+
+</p>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="p1">
+        <p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPnJFrGl_zqxvFuU1wuibui9m-gziSA8_Iw&usqp=CAU"/> 
+        <br/>Смартфон </p>
+    <p >Ціна:<span>5999.99</span></p>
+    </div>
+    <div class="p2">
+        <p class="p2__title">Смартфон</p> <br/>
+        <p class="p2__body">кишеньковий електронний пристрій, поєднує в собі телефонні функції, камеру та комп'ютерні можливості. Має мініатюрний корпус з екраном, акумулятором і камерою.  </p>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="p1">
+        <p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG5AkcxEtX0iRHFVKMhY9uGFk5qjfSPQOW5w&usqp=CAU"/> 
+        <br/> Планшет </p>
+    <p >Ціна:<span>7999.99</span></p>
+    </div>
+    <div class="p2">
+        <p class="p2__title">Планшет</p> <br/>
+        <p class="p2__body">портативний пристрій з сенсорним екраном, об'єднує в собі комп'ютерні можливості без клавіатури. Використовується для перегляду веб-сторінок, відтворення відео, читання електронних книг та виконання інших завдань в рухомому форм-факторі.</p>
+    </div>
+</div>
+
+
+
+
 <input type="number" id="numberInput" placeholder="Введіть число" />
 <button class="pay">Pay</button>
 <p class="payResult"></p>
 <script>
     let numberInput = document.getElementById("numberInput");
+    const prices = document.querySelectorAll("span");
     let payResult = document.querySelector(".payResult");
     const payBtn = document.querySelector(".pay");
+    
     numberInput.value = localStorage.getItem("savedNumber") || "";
 
     numberInput.oninput = () => {
         localStorage.setItem("savedNumber", numberInput.value);
-    }
-
+     }
+    
+ 
+    
     payBtn.addEventListener("click", ()=>{
         if(numberInput.value>0){
             payResult.innerHTML = `Сплачено: ${numberInput.value} грн.`
