@@ -1,123 +1,52 @@
-<html>
-<head><style>
-        #numberInput {
-            padding: 15px;
-            font-size: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-    </style> <title> Ціни </title> <link rel="stylesheet" href="style.css"> </head>
-<body>
-<header><nav>
-           <a id="nav1" class="nava1" href="https://maksim464.github.io/site-in-2-pages/">Головна</a> <a class="nava2" href="">Детальніше</a> </nav></header>
-<h1>Ціни на товари</h1>
+*{
+    margin: 0;
+    padding: 0;
+}
+body{font-family: sans-serif; text-align: center; font-size: 26px; width: 900px; position: relative;}
+.p1 { text-align: left; margin-left: 20px; width: 50%;}
+h2{font-size: 40px; }
+footer{background-color: #D9D9D9;}
+.nava1{margin-right: 50px ; font-size: 35px; background-color:#FF6C00 ; padding: 5px;  text-decoration: none;
+ border-radius: 14px ;}
+.nava2{font-size: 30px; background-color:#FF6C00 ; padding: 5px; text-decoration: none;border-radius: 14px ; }
+header{background-color: #009E8E; padding: 30px; position: fixed; width: 100%; top: 0;}
+h1{text-align: center; margin-bottom: 30px; margin-top: 80px;}
+header{ text-align: left; margin: 0px; padding: 10px;}
+a{
+    color: black;
+}
+.card{
+    display: flex;
 
-<main>
-<div class="card">
-    <div class="p1">
-        <p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOM4cBonX1mK1B_5j0pAlu-hin40sTIq7IZA&usqp=CAU"/> 
-        <br/> Самокат</p>
-    <p >Ціна:<span>3999.99</span></p>
-    </div>
-    <div class="p2">
-        <p class="p2__title">Електросамокат</p> <br/>
-        <p class="p2__body">це мобільний транспортний засіб, обладнаний електричним двигуном, призначений для пересування по місту чи іншими вуличними просторами. 
- </p>
-    </div>
-</div>
-
-<div class="card">
-    <div class="p1">
-        <p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Gk0EPzPEgg8uenprB2UCdxeyTIZYzekv1Q&usqp=CAU"/> 
-        <br/>Ноутбук </p>
-    <p >Ціна: <span>4999.99</span></p>
-    </div>
-    <div class="p2">
-        <p class="p2__title">Ноутбук</p> <br/>
-        <p class="p2__body">портативний комп'ютер, компактний та легкий, призначений для мобільного використання. Він має вбудований екран, клавіатуру та мишу чи сенсорний панель. 
-
-
-
-
-
-</p>
-    </div>
-</div>
-
-
-<div class="card">
-    <div class="p1">
-        <p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPnJFrGl_zqxvFuU1wuibui9m-gziSA8_Iw&usqp=CAU"/> 
-        <br/>Смартфон </p>
-    <p >Ціна:<span>5999.99</span></p>
-    </div>
-    <div class="p2">
-        <p class="p2__title">Смартфон</p> <br/>
-        <p class="p2__body">кишеньковий електронний пристрій, поєднує в собі телефонні функції, камеру та комп'ютерні можливості. Має мініатюрний корпус з екраном, акумулятором і камерою.  </p>
-    </div>
-</div>
-
-
-<div class="card">
-    <div class="p1">
-        <p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG5AkcxEtX0iRHFVKMhY9uGFk5qjfSPQOW5w&usqp=CAU"/> 
-        <br/> Планшет </p>
-    <p >Ціна:<span>7999.99</span></p>
-    </div>
-    <div class="p2">
-        <p class="p2__title">Планшет</p> <br/>
-        <p class="p2__body">портативний пристрій з сенсорним екраном, об'єднує в собі комп'ютерні можливості без клавіатури. Використовується для перегляду веб-сторінок, відтворення відео, читання електронних книг та виконання інших завдань в рухомому форм-факторі.</p>
-    </div>
-</div>
-
-
-
-
-<input type="number" id="numberInput" placeholder="Введіть число" />
-<button class="pay">Pay</button>
-<p class="payResult"></p>
-<script>
-    let numberInput = document.getElementById("numberInput");
-    const prices = document.querySelectorAll("span");
-    let payResult = document.querySelector(".payResult");
-    const payBtn = document.querySelector(".pay");
-    
-    numberInput.value = localStorage.getItem("savedNumber") || "";
-
-    numberInput.oninput = () => {
-        localStorage.setItem("savedNumber", numberInput.value);
-     }
-    
- 
-    
-    payBtn.addEventListener("click", ()=>{
-        if(numberInput.value>0){
-            payResult.innerHTML = `Сплачено: ${numberInput.value} грн.`
-        }
-        else{
-            if(numberInput.value==0){
-                payResult.innerHTML = `Сума 0 грн`
-            }
-            if(numberInput.value<0){
-                  payResult.innerHTML = `Неможливо сплатити мінус значення`
-            }
-           
-        }
-        
-            
-
-    })
-</script>
-
-
-</main>
-<footer>
-<h2>Є питання?</h2>
-<p>телефонуйте за номером:+3809657244804</p>
-</footer>
-</body>
-</html>
+  border: 4px solid black;
+  width: 90%;
+  border-radius: 10px;
+}
+.p2__title{
+    text-align: center;
+}
+.p2{
+    max-width: 100%;
+    padding: 15px 15px 15px 20px;
+    text-align: left;
+    border-left: 4px solid black;
+}
+.p2__body{
+    word-break: break-all;
+}
+footer{padding: 10px;}
+main{
+     padding: 5px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 30px;
+}
+button{
+    width: 37%;
+    padding:10px 20px;
+}
+.nava1:hover,.nava2:hover{
+background-color: #e16004;
+color: white;
+}
